@@ -1,15 +1,10 @@
-import vue from '@vitejs/plugin-vue'
-import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite';
+import path from 'path';
 
-import path from 'path'
-// https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   return {
-    // 项目插件
-    plugins: [
-      vue(),
-    ],
-    // 基础配置
+    plugins: [vue()],
     base: './',
     publicDir: 'public',
     resolve: {
@@ -37,13 +32,10 @@ export default defineConfig(({ command, mode }) => {
       minify: 'terser',
       terserOptions: {
         compress: {
-          // 生产环境去除console及debug
           drop_console: false,
           drop_debugger: true,
         },
       },
     },
-  }
-})
-
-
+  };
+});
