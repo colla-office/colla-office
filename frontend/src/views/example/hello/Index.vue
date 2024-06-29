@@ -153,7 +153,24 @@ const code = ref(
     `
 )
 const editorRef = shallowRef()
-const handleMount = editor => (editorRef.value = editor)
+const handleMount = editor => {
+  editor.onKeyDown(e => {
+    if (e.metaKey && e.keyCode === 3) {
+      // 处理 Enter 键按下事件
+      console.log('Enter 键被按下');
+    }
+    if (e.keyCode === 16) {
+      const position = editor.getPosition();
+      if (position) {
+        const lineNumber = position.lineNumber;
+        console.log('光标所在行数:', lineNumber);
+      } else {
+        console.log('无法获取光标位置信息');
+      }
+    }
+  });
+  editorRef.value = editor
+};
 
 // your action
 function formatCode() {
