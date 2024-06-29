@@ -1,48 +1,31 @@
 <template>
-  <section id="hero">
-    <div id="ko"></div>
-  </section>
+  <div id="ko" style="height: 500px">
+    <vue-monaco-editor
+        v-model:value="code"
+        theme="vs-dark"
+        :options="MONACO_EDITOR_OPTIONS"
+        @mount="handleMount"
+    />
+  </div>
 </template>
-<script>
+<script lang="ts" setup>
+import { ref, shallowRef } from 'vue'
 
-export default {
-  data() {
-    return {};
-  },
-};
+const MONACO_EDITOR_OPTIONS = {
+  automaticLayout: true,
+  formatOnType: true,
+  formatOnPaste: true,
+}
+
+const code = ref('// some code...')
+const editorRef = shallowRef()
+const handleMount = editor => (editorRef.value = editor)
+
+// your action
+function formatCode() {
+  editorRef.value?.getAction('editor.action.formatDocument').run()
+}
 </script>
 <style scoped>
-:root {
-  --count: 60%;
-}
 
-body {
-  display: flex;
-  min-height: 100vh;
-  margin: 0;
-}
-
-#ko {
-  margin: auto;
-  width: 200px;
-  height: 160px;
-  border-radius: 20px;
-  position: relative;
-  border: 1px solid #ddd;
-  background-color: white;
-}
-
-#ko::after {
-  content: '';
-  display: block;
-  position: absolute;
-  left: -3px;
-  top: -3px;
-  right: -3px;
-  bottom: -3px;
-  background-color: transparent;
-  background-image: conic-gradient(orange, orange var(--count), transparent var(--count));
-  z-index: -100;
-  border-radius: 21.5px;
-}
 </style>

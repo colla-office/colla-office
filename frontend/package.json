@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@guolao/vue-monaco-editor": "^1.5.1",
+    "monaco-editor": "^0.50.0",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14"
   },

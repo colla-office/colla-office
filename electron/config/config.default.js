@@ -24,8 +24,8 @@ module.exports = (appInfo) => {
    */
   config.windowsOption = {
     title: 'EE框架',
-    width: 980,
-    height: 650,
+    width: 1300,
+    height: 760,
     minWidth: 400,
     minHeight: 300,
     webPreferences: {
@@ -41,7 +41,7 @@ module.exports = (appInfo) => {
 
   /**
    * ee框架日志
-   */  
+   */
   config.logger = {
     encoding: 'utf8',
     level: 'INFO',
@@ -51,12 +51,12 @@ module.exports = (appInfo) => {
     rotator: 'day',
     appLogName: 'ee.log',
     coreLogName: 'ee-core.log',
-    errorLogName: 'ee-error.log' 
+    errorLogName: 'ee-error.log'
   }
 
   /**
    * 远程模式-web地址
-   */    
+   */
   config.remoteUrl = {
     enable: false,
     url: 'http://electron-egg.kaka996.com/'
@@ -64,7 +64,7 @@ module.exports = (appInfo) => {
 
   /**
    * 内置socket服务
-   */   
+   */
   config.socketServer = {
     enable: false,
     port: 7070,
@@ -81,11 +81,11 @@ module.exports = (appInfo) => {
 
   /**
    * 内置http服务
-   */     
+   */
   config.httpServer = {
     enable: false,
     https: {
-      enable: false, 
+      enable: false,
       key: '/public/ssl/localhost+1.key',
       cert: '/public/ssl/localhost+1.pem'
     },
@@ -110,11 +110,11 @@ module.exports = (appInfo) => {
 
   /**
    * 主进程
-   */     
+   */
   config.mainServer = {
     protocol: 'file://',
     indexPath: '/public/dist/index.html',
-  }; 
+  };
 
   /**
    * 硬件加速
@@ -137,7 +137,7 @@ module.exports = (appInfo) => {
    */
   config.jobs = {
     messageLog: true
-  };  
+  };
 
   /**
    * 插件功能
@@ -161,11 +161,11 @@ module.exports = (appInfo) => {
     },
     autoUpdater: {
       enable: true,
-      windows: false, 
-      macOS: false, 
+      windows: false,
+      macOS: false,
       linux: false,
       options: {
-        provider: 'generic', 
+        provider: 'generic',
         url: 'http://kodo.qiniu.com/'
       },
       force: false,

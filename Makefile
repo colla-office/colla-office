@@ -15,6 +15,9 @@ export DEVENV_FILE
 endif
 
 web:
-	pnpm run dev-frontend
+	npm run dev-frontend
 
-
+client:
+	npm run dev-electron
+dev:
+	npm run dev
