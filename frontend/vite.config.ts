@@ -1,41 +1,33 @@
-import vue from '@vitejs/plugin-vue';
-import { defineConfig } from 'vite';
-import path from 'path';
+import { fileURLToPath, URL } from 'node:url'
 
-export default defineConfig(({ command, mode }) => {
-  return {
-    plugins: [vue()],
-    base: './',
-    publicDir: 'public',
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, 'src'),
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import vueDevTools from 'vite-plugin-vue-devtools'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    vue(),
+    vueDevTools(),
+  ],
+  base: './',
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    assetsInlineLimit: 4096,
+    cssCodeSplit: true,
+    sourcemap: false,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: false,
+        drop_debugger: true,
       },
     },
-    css: {
-      preprocessorOptions: {
-        less: {
-          modifyVars: {
-            '@border-color-base': '#dce3e8',
-          },
-          javascriptEnabled: true,
-        },
-      },
-    },
-    build: {
-      outDir: 'dist',
-      assetsDir: 'assets',
-      assetsInlineLimit: 4096,
-      cssCodeSplit: true,
-      brotliSize: false,
-      sourcemap: false,
-      minify: 'terser',
-      terserOptions: {
-        compress: {
-          drop_console: false,
-          drop_debugger: true,
-        },
-      },
-    },
-  };
-});
+  },
+})

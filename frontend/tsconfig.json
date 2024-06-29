@@ -1,25 +1,14 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitAny": true,
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    },
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
     }
-  },
-  "include": ["vite.config.ts","src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "exclude": ["node_modules"]
+  ]
 }

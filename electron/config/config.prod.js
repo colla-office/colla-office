@@ -21,7 +21,7 @@ module.exports = (appInfo) => {
    */
   config.jobs = {
     messageLog: false
-  }; 
+  };
 
   return {
     ...config
