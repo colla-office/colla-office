@@ -148,8 +148,8 @@ module.exports = (appInfo) => {
     },
     tray: {
       enable: true,
-      title: 'EE程序',
-      icon: '/public/images/tray.png'
+      title: 'Office',
+      icon: '/public/images/img.png'
     },
     security: {
       enable: true,

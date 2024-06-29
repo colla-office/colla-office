@@ -22,8 +22,8 @@ class TrayAddon {
    */
   create () {
     // 开发环境，代码热更新开启时，会导致托盘中有残影
-    if (Ps.isDev() && Ps.isHotReload()) return;
-    
+    // if (Ps.isDev() && Ps.isHotReload()) return;
+
     Log.info('[addon:tray] load');
     const { CoreApp } = EE;
     const cfg = Conf.getValue('addons.tray');
@@ -31,7 +31,7 @@ class TrayAddon {
 
     // 托盘图标
     let iconPath = path.join(Ps.getHomeDir(), cfg.icon);
-  
+
     // 托盘菜单功能列表
     let trayMenuTemplate = [
       {
@@ -47,7 +47,7 @@ class TrayAddon {
         }
       }
     ]
-  
+
     // 点击关闭，最小化到托盘
     mainWindow.on('close', (event) => {
       if (Electron.extra.closeWindow == true) {
@@ -56,10 +56,12 @@ class TrayAddon {
       mainWindow.hide();
       event.preventDefault();
     });
-    
+
     // 实例化托盘
     this.tray = new Tray(iconPath);
-    this.tray.setToolTip(cfg.title);
+    this.tray.setToolTip('cfg.title');
+    Log.info('[addon:tray] load2');
+    Log.info('[addon:tray] load3', iconPath);
     const contextMenu = Menu.buildFromTemplate(trayMenuTemplate);
     this.tray.setContextMenu(contextMenu);
     this.tray.on('double-click', () => {
