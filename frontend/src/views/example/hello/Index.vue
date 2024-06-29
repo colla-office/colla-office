@@ -1,7 +1,7 @@
 <template>
   <div >
     <div id="ccc">
-      <div class="chat-container">
+      <div ref="scrollContainer" class="chat-container">
         <splitpanes class="default-theme" horizontal style="height: 100vh">
           <pane size="75" min-size="30">
             <div class="chat-messages" id="chatMessages">
@@ -47,74 +47,75 @@
                 </div>
                 <div class="chat-time">2024-01-18 16:22:23</div>
               </div>
-            </div>
-            <div class="chat-message received">
-              <div class="chat-bubble received">
-                <div>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
-                  fvgbhjnkmfgbh<br>
+              <div class="chat-message received">
+                <div class="chat-bubble received">
+                  <div>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkcdfvgbhnnnnnnnnnnbhkknhkhbkjhbkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                    fvgbhjnkmfgbh<br>
+                  </div>
                 </div>
+                <div class="chat-time">2024-01-18 16:22:23</div>
               </div>
-              <div class="chat-time">2024-01-18 16:22:23</div>
             </div>
+            <div ref="scrollContainer22"></div>
           </pane>
           <pane size="25" max-size="70" min-size="30">
             <div class="chat-input" style="height: 100%">
@@ -135,7 +136,24 @@
 <script lang="ts" setup>
 import {Splitpanes, Pane} from 'splitpanes'
 
-import { ref, shallowRef } from 'vue'
+import {nextTick, onMounted, ref, shallowRef} from 'vue'
+const scrollContainer = ref<HTMLDivElement | null>(null);
+const scrollContainer22 = ref<HTMLDivElement | null>(null);
+
+const scrollToBottom = () => {
+  nextTick(() => {
+    const container = scrollContainer.value;
+    console.log('111');
+    if (container) {
+      setTimeout(()=>{
+        console.log('112', container.scrollTop, container);
+        container.scrollIntoView({behavior: "smooth", block: "end"});
+        scrollContainer.value.scrollTop = scrollContainer.value.scrollHeight + 20;
+      }, 2000)
+    }
+  });
+};
+
 import WebSocketComponent from "@/views/example/hello/WebSocketComponent.vue";
 
 const MONACO_EDITOR_OPTIONS = {
@@ -152,6 +170,13 @@ const code = ref(
 }
     `
 )
+
+onMounted(async () => {
+  await nextTick();
+  let div = scrollContainer.value!;
+  div = div.querySelector('.splitpanes__pane')!;
+  div.scrollTo({top: div.scrollHeight, behavior: 'smooth'});
+});
 const editorRef = shallowRef()
 const handleMount = editor => {
   editor.onKeyDown(e => {
@@ -193,7 +218,7 @@ function formatCode() {
 .chat-messages {
   flex: 1;
   padding: 10px;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 .splitpanes__pane{
   overflow: auto;
